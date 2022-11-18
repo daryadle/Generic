@@ -10,10 +10,9 @@ namespace Generic
     {
         static void Main(string[] args)
         {
-            Student stu = new Student() { Name = "Darya", LastName = "Dalaei", Id = "123" };
-               
-            
+            Student stu = new Student() { Name = "Darya", LastName = "Dalaei", Id = "123" }; 
             WriteOnFile<Student>(stu,"log","Student");
+            ReadOnfile("Log", "Student");
 
             Console.ReadKey();
         }
@@ -39,6 +38,11 @@ namespace Generic
                 Directory.CreateDirectory(path);
 
             File.WriteAllLines(filePath,mytext);
+        }
+        public static void ReadOnfile(string path, string fileName)
+        {
+            var readData = File.ReadAllText(Path.Combine(path, fileName));
+            Console.WriteLine(readData);
         }
         
     }
