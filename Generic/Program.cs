@@ -12,7 +12,7 @@ namespace Generic
         {
             Student stu = new Student() { Name = "Darya", LastName = "Dalaei", Id = "123" }; 
             WriteOnFile<Student>(stu,"log","Student");
-            ReadOnfile("log", "Student");
+            //ReadOnfile("log", "Student");
             Read<Student>(@"C:\Users\\gh\\source\\repos\\Generic\\Generic\\bin\\Debug\\net5.0\\log\\Student");
             
 
@@ -41,11 +41,11 @@ namespace Generic
 
             File.WriteAllLines(filePath,mytext);
         }
-        public static void ReadOnfile(string path, string fileName)
-        {
-            var readData = File.ReadAllText(Path.Combine(path, fileName));
-            Console.WriteLine(readData);
-        }
+        //public static void ReadOnfile(string path, string fileName)
+        //{
+        //    var readData = File.ReadAllText(Path.Combine(path, fileName));
+        //    Console.WriteLine(readData);
+        //}
         public static void Read<T>(string filePath) where T : class, new()
         {
             List<T> output = new List<T>();
@@ -61,10 +61,7 @@ namespace Generic
             {
                 Console.WriteLine(item);    
             }
-           
-           
         }
-
     }
     
     public class Student
